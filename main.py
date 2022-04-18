@@ -1,21 +1,31 @@
-# This is a sample Python script.
+import random
+import sys
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+# Define player choices
+valid_outcome = ["spock", "scissor", "rock", "lizard", "paper"]
+
+# Get player outcome
+player1 = random.choice(valid_outcome)
+player2 = random.choice(valid_outcome)
+print("Player 1 is ", player1)
+print("Player 2 is ", player2)
+
+# Valid player outcome
+if player1 == player2:
+    sys.exit("Same player choice, play again")
+
+# Set rule for winning and provide result
+if player1 == "spock" and player2 in ["scissor", "rock"]:
+    print("Player 1 win")
+elif player1 == "lizard" and player2 in ["spock", "paper"]:
+    print("Player 1 win")
+elif player1 == "rock" and player2 in ["scissor", "lizard"]:
+    print("Player 1 win")
+elif player1 == "paper" and player2 in ["spock", "rock"]:
+    print("Player 1 win")
+elif player1 == "scissor" and player2 in ["lizard", "paper"]:
+    print("Player 1 win")
+else:
+    print("Player 2 win")
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
-# to see what is editing 
-#123123123
-#12576878
-#Finaltry
